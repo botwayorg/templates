@@ -25,7 +25,7 @@ func SettingsGradleKts() string {
 }
 
 func KotlinTemplate(botName, platform, hostService string) {
-	createDirs(botName, "kotlin")
+	createDirs(botName, "kotlin", platform)
 
 	gradle, err := looker.LookPath("gradle")
 

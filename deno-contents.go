@@ -1,11 +1,11 @@
 package templates
 
-func DenoMainTsContent() string {
-	return Content("main.ts", "discord-deno", "", "")
+func DenoMainTsContent(platform string) string {
+	return Content("main.ts", platform+"-deno", "", "")
 }
 
-func DepsTsContent() string {
-	return Content("deps.ts", "discord-deno", "", "")
+func DepsTsContent(platform string) string {
+	return Content("deps.ts", platform+"-deno", "", "")
 }
 
 func CommandsModTsContent() string {
@@ -38,4 +38,8 @@ func UtilsHelpersTsContent() string {
 
 func UtilsLoggerTsContent() string {
 	return Content("src/utils/logger.ts", "discord-deno", "", "")
+}
+
+func LoggerTsContent() string {
+	return Content("logger.ts", "twitch-deno", "", "")
 }

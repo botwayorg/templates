@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 )
 
-func createDirs(botName, lang string) {
+func createDirs(botName, lang, platform string) {
 	if err := os.Mkdir(filepath.Join(botName, "gradle"), os.ModePerm); err != nil {
 		log.Fatal(err)
 	}
@@ -33,6 +33,12 @@ func createDirs(botName, lang string) {
 
 	if err := os.Mkdir(filepath.Join(botName, "app", "src", "main", lang, "core"), os.ModePerm); err != nil {
 		log.Fatal(err)
+	}
+
+	if platform == "twitch" {
+		if err := os.Mkdir(filepath.Join(botName, "app", "src", "main", lang, "core", "features"), os.ModePerm); err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 
@@ -74,4 +80,24 @@ func GradlewBatContent() string {
 
 func SettingsGradle() string {
 	return Content("settings.gradle", "telegram-java", "", "")
+}
+
+func StartJavaContent() string {
+	return Content("app/src/main/java/core/Start.java", "twitch-java", "", "")
+}
+
+func ChannelNotificationOnDonation() string {
+	return Content("app/src/main/java/core/features/ChannelNotificationOnDonation.java", "twitch-java", "", "")
+}
+
+func ChannelNotificationOnFollow() string {
+	return Content("app/src/main/java/core/features/ChannelNotificationOnFollow.java", "twitch-java", "", "")
+}
+
+func ChannelNotificationOnSubscription() string {
+	return Content("app/src/main/java/core/features/ChannelNotificationOnSubscription.java", "twitch-java", "", "")
+}
+
+func WriteChannelChatToConsole() string {
+	return Content("app/src/main/java/core/features/WriteChannelChatToConsole.java", "twitch-java", "", "")
 }

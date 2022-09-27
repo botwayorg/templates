@@ -13,7 +13,7 @@ import (
 )
 
 func JavaTemplate(botName, platform, hostService string) {
-	createDirs(botName, "java")
+	createDirs(botName, "java", platform)
 
 	gradle, err := looker.LookPath("gradle")
 
@@ -42,6 +42,34 @@ func JavaTemplate(botName, platform, hostService string) {
 
 			if tgBotFile != nil {
 				log.Fatal(tgBotFile)
+			}
+		}
+
+		if platform == "twitch" {
+			startFile := os.WriteFile(filepath.Join(botName, "app", "src", "main", "java", "core", "Start.java"), []byte(StartJavaContent()), 0644)
+			cnodFile := os.WriteFile(filepath.Join(botName, "app", "src", "main", "java", "core", "features", "ChannelNotificationOnDonation.java"), []byte(ChannelNotificationOnDonation()), 0644)
+			cnofFile := os.WriteFile(filepath.Join(botName, "app", "src", "main", "java", "core", "features", "ChannelNotificationOnFollow.java"), []byte(ChannelNotificationOnFollow()), 0644)
+			cnosFile := os.WriteFile(filepath.Join(botName, "app", "src", "main", "java", "core", "features", "ChannelNotificationOnSubscription.java"), []byte(ChannelNotificationOnSubscription()), 0644)
+			wcctcFile := os.WriteFile(filepath.Join(botName, "app", "src", "main", "java", "core", "features", "WriteChannelChatToConsole.java"), []byte(WriteChannelChatToConsole()), 0644)
+
+			if startFile != nil {
+				log.Fatal(startFile)
+			}
+
+			if cnodFile != nil {
+				log.Fatal(cnodFile)
+			}
+
+			if cnofFile != nil {
+				log.Fatal(cnofFile)
+			}
+
+			if cnosFile != nil {
+				log.Fatal(cnosFile)
+			}
+
+			if wcctcFile != nil {
+				log.Fatal(wcctcFile)
 			}
 		}
 
