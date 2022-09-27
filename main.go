@@ -17,6 +17,8 @@ func BotSecrets(platform string) string {
 		return "TELEGRAM_TOKEN"
 	} else if strings.Contains(platform, "slack") {
 		return "SLACK_TOKEN SLACK_APP_TOKEN SLACK_SIGNING_SECRET"
+	} else if strings.Contains(platform, "twitch") {
+		return "TWITCH_OAUTH_TOKEN TWITCH_CLIENT_ID TWITCH CLIENT_SECRET"
 	}
 
 	return "" + platform
