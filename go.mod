@@ -6,7 +6,7 @@ require (
 	github.com/abdfnx/botway v0.2.0
 	github.com/abdfnx/looker v0.1.0
 	github.com/abdfnx/resto v0.1.6
-	github.com/tidwall/gjson v1.14.3
+	github.com/tidwall/gjson v1.14.4
 )
 
 require (
