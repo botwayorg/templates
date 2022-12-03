@@ -130,13 +130,13 @@ func CppTemplate(botName, platform, hostService string) {
 			if platform == "discord" {
 				fmt.Println(constants.INFO_FOREGROUND.Render(`On Windows, follow instructions at https://dpp.dev/buildwindows.html`))
 			} else if platform == "telegram" {
-				install = "irm https://raw.githubusercontent.com/botwayorg/telegram-cpp/main/scripts/install-deps.ps1 | iex"
+				install = "irm https://dub.sh/bw-telegram-cpp-win | iex"
 			}
 		} else {
 			if platform == "discord" {
-				install = "curl -sL https://bit.ly/dpp-" + pos + " | bash"
+				install = "curl -sL https://dub.sh/dpp-" + pos + " | bash"
 			} else if platform == "telegram" {
-				install = "curl -sL https://raw.githubusercontent.com/botwayorg/telegram-cpp/main/scripts/install-deps.sh | bash"
+				install = "curl -sL https://dub.sh/bw-telegram-cpp | bash"
 			}
 		}
 
