@@ -34,7 +34,7 @@ func DenoTemplate(botName, platform, hostService string) {
 		fmt.Println(constants.FAIL_FOREGROUND.Render(" deno is not installed"))
 	} else {
 		mainFile := os.WriteFile(filepath.Join(botName, "main.ts"), []byte(DenoMainTsContent(platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "deno.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "deno.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "deno.md")), 0644)
 		fileToCache := "deps.ts"
 

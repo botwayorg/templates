@@ -55,7 +55,7 @@ You can add a folder to your '$LOAD_PAT'H either at runtime or via the -I comman
 		}
 
 		mainFile := os.WriteFile(filepath.Join(botName, "src", "main.rb"), []byte(MainRbContent(platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "ruby.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "ruby.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "ruby.md")), 0644)
 
 		if mainFile != nil {

@@ -38,7 +38,7 @@ func PHPTemplate(botName, platform, hostService string) {
 		mainFile := os.WriteFile(filepath.Join(botName, "src", "main.php"), []byte(MainPHPContent(platform)), 0644)
 		botwayFile := os.WriteFile(filepath.Join(botName, "src", "botway.php"), []byte(BotwayPHPContent()), 0644)
 		composerFile := os.WriteFile(filepath.Join(botName, "composer.json"), []byte(ComposerFileContent(botName, platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "php.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "php.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "php.md")), 0644)
 
 		if mainFile != nil {

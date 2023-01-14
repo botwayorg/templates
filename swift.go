@@ -42,7 +42,7 @@ func SwiftTemplate(botName, platform, hostService string) {
 		mainFile := os.WriteFile(filepath.Join(botName, "Sources", botName, "main.swift"), []byte(MainSwiftContent(platform)), 0644)
 		botwaySwiftFile := os.WriteFile(filepath.Join(botName, "Sources", botName, "botway.swift"), []byte(BotwaySwiftContent(botName)), 0644)
 		packageSwiftFile := os.WriteFile(filepath.Join(botName, "Package.swift"), []byte(PackageSwiftFileContent(botName, platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "swift.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "swift.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "swift.md")), 0644)
 
 		if mainFile != nil {

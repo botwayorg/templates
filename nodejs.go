@@ -40,17 +40,13 @@ func NodejsTemplate(botName, pm, platform, hostService string, isTs bool) {
 			fmt.Print(constants.FAIL_BACKGROUND.Render("ERROR"))
 			fmt.Println(constants.FAIL_FOREGROUND.Render(" npm is not installed"))
 		} else {
-			mainFile := os.WriteFile(filepath.Join(botName, "src", "main.ts"), []byte(MainJSContent(platform)), 0644)
-			dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, pm+".dockerfile", platform)), 0644)
+			mainFile := os.WriteFile(filepath.Join(botName, "src", "main.js"), []byte(MainJSContent(platform)), 0644)
+			dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, pm+".dockerfile", platform)), 0644)
 			resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "nodejs.md")), 0644)
 			packageFile := os.WriteFile(filepath.Join(botName, "package.json"), []byte(Content("package.json", platform+"-"+isTypescript(isTs), "", "")), 0644)
 
 			if resourcesFile != nil {
 				log.Fatal(resourcesFile)
-			}
-
-			if mainFile != nil {
-				log.Fatal(mainFile)
 			}
 
 			if dockerFile != nil {
@@ -62,11 +58,16 @@ func NodejsTemplate(botName, pm, platform, hostService string, isTs bool) {
 			}
 
 			if isTs {
+				mainFile = os.WriteFile(filepath.Join(botName, "src", "main.ts"), []byte(MainTSContent(platform)), 0644)
 				tsConfigFile := os.WriteFile(filepath.Join(botName, "tsconfig.json"), []byte(Content("tsconfig.json", platform+"-nodejs-ts", "", "")), 0644)
 
 				if tsConfigFile != nil {
 					log.Fatal(tsConfigFile)
 				}
+			}
+
+			if mainFile != nil {
+				log.Fatal(mainFile)
 			}
 
 			pmInstall := pmPath + " i"

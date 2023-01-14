@@ -42,7 +42,7 @@ func GoTemplate(botName, platform, hostService string) {
 		}
 
 		mainFile := os.WriteFile(filepath.Join(botName, "src", "main.go"), []byte(MainGoContent(platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "go.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "go.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "go.md")), 0644)
 
 		if mainFile != nil {

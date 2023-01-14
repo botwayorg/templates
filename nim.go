@@ -42,7 +42,7 @@ func NimTemplate(botName, platform, hostService string) {
 		mainFile := os.WriteFile(filepath.Join(botName, "src", "main.nim"), []byte(MainNimContent(platform)), 0644)
 		botnimFile := os.WriteFile(filepath.Join(botName, "src", "botnim.nim"), []byte(BotnimContent(botName)), 0644)
 		nimbleFile := os.WriteFile(filepath.Join(botName, botName+".nimble"), []byte(NimbleFileContent(platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, "nim.dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, "nim.dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "nim.md")), 0644)
 
 		if platform == "discord" {

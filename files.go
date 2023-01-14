@@ -2,8 +2,8 @@ package templates
 
 import "fmt"
 
-func DockerfileContent(botName, hostService, dockerFile, platform string) string {
-	return Content(fmt.Sprintf("dockerfiles/%s/%s", hostService, dockerFile), "botway", botName, platform)
+func DockerfileContent(botName, dockerFile, platform string) string {
+	return Content(fmt.Sprintf("dockerfiles/%s", dockerFile), "botway", botName, platform)
 }
 
 func Resources(platform, file string) string {

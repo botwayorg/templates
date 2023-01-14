@@ -44,7 +44,7 @@ func PythonTemplate(botName, platform, pm, hostService string) {
 		fmt.Println(constants.FAIL_FOREGROUND.Render(fmt.Sprintf(" %s is not installed", pip)))
 	} else {
 		mainFile := os.WriteFile(filepath.Join(botName, "src", "main.py"), []byte(MainPyContent(platform)), 0644)
-		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, hostService, pm+".dockerfile", platform)), 0644)
+		dockerFile := os.WriteFile(filepath.Join(botName, "Dockerfile"), []byte(DockerfileContent(botName, pm+".dockerfile", platform)), 0644)
 		resourcesFile := os.WriteFile(filepath.Join(botName, "resources.md"), []byte(Resources(platform, "python.md")), 0644)
 
 		if resourcesFile != nil {
