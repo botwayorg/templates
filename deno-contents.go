@@ -1,11 +1,7 @@
 package templates
 
 func DenoMainTsContent(platform string) string {
-	return Content("main.ts", platform+"-deno", "", "")
-}
-
-func DepsTsContent(platform string) string {
-	return Content("deps.ts", platform+"-deno", "", "")
+	return Content("src/main.ts", platform+"-deno", "", "")
 }
 
 func CommandsModTsContent() string {
@@ -40,6 +36,18 @@ func UtilsLoggerTsContent() string {
 	return Content("src/utils/logger.ts", "discord-deno", "", "")
 }
 
-func LoggerTsContent() string {
-	return Content("logger.ts", "twitch-deno", "", "")
+func DenoJsonContent() string {
+	return Content("deno.json", "twitch-deno", "", "")
+}
+
+func ImportMapJsonContent(platform string) string {
+	return Content("import_map.json", platform+"-deno", "", "")
+}
+
+func VscodeExtensionsJsonContent() string {
+	return Content(".vscode/extensions.json", "twitch-deno", "", "")
+}
+
+func VscodeSettingsJsonContent() string {
+	return Content(".vscode/settings.json", "twitch-deno", "", "")
 }
