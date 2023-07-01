@@ -48,18 +48,18 @@ func CppTemplate(botName, platform, hostService string) {
 		if err := os.Mkdir(filepath.Join(botName, "cmake"), os.ModePerm); err != nil {
 			log.Fatal(err)
 		}
+	}
 
-		if err := os.Mkdir(filepath.Join(botName, "include"), os.ModePerm); err != nil {
-			log.Fatal(err)
-		}
+	if err := os.Mkdir(filepath.Join(botName, "include"), os.ModePerm); err != nil {
+		log.Fatal(err)
+	}
 
-		if err := os.Mkdir(filepath.Join(botName, "include", "botway"), os.ModePerm); err != nil {
-			log.Fatal(err)
-		}
+	if err := os.Mkdir(filepath.Join(botName, "include", "botway"), os.ModePerm); err != nil {
+		log.Fatal(err)
+	}
 
-		if err := os.Mkdir(filepath.Join(botName, "include", botName), os.ModePerm); err != nil {
-			log.Fatal(err)
-		}
+	if err := os.Mkdir(filepath.Join(botName, "include", botName), os.ModePerm); err != nil {
+		log.Fatal(err)
 	}
 
 	if err != nil {

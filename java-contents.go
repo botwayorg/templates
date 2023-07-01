@@ -31,6 +31,12 @@ func createDirs(botName, lang, platform string) {
 		log.Fatal(err)
 	}
 
+	if (lang == "kotlin") {
+		if err := os.Mkdir(filepath.Join(botName, "app", "src", "main", lang, "botway"), os.ModePerm); err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	if err := os.Mkdir(filepath.Join(botName, "app", "src", "main", lang, "core"), os.ModePerm); err != nil {
 		log.Fatal(err)
 	}
