@@ -20,7 +20,7 @@ func ShardFileContent(botName string) string {
 	return Content("shard.yml", "discord-crystal", botName, "")
 }
 
-func CrystalTemplate(botName, hostService string) {
+func CrystalTemplate(botName string) {
 	_, err := looker.LookPath("crystal")
 	shardsPath, serr := looker.LookPath("shards")
 

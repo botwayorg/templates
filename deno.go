@@ -12,7 +12,7 @@ import (
 	"github.com/abdfnx/looker"
 )
 
-func DenoTemplate(botName, platform, hostService string) {
+func DenoTemplate(botName, platform string) {
 	deno, err := looker.LookPath("deno")
 
 	if err != nil {

@@ -16,7 +16,7 @@ func MainGoContent(platform string) string {
 	return Content("main.go", platform+"-go", "", "")
 }
 
-func GoTemplate(botName, platform, hostService string) {
+func GoTemplate(botName, platform string) {
 	goPath, err := looker.LookPath("go")
 
 	if err != nil {

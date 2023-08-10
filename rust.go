@@ -20,7 +20,7 @@ func CargoFileContent(botName, platform string) string {
 	return Content("Cargo.toml", platform+"-rust", botName, "")
 }
 
-func RustTemplate(botName, platform, pm, hostService string) {
+func RustTemplate(botName, platform, pm string) {
 	_, err := looker.LookPath("cargo")
 	pmPath, perr := looker.LookPath(pm)
 

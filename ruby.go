@@ -16,7 +16,7 @@ func MainRbContent(platform string) string {
 	return Content("main.rb", platform+"-ruby", "", "")
 }
 
-func RubyTemplate(botName, platform, hostService string) {
+func RubyTemplate(botName, platform string) {
 	_, err := looker.LookPath("ruby")
 	bundlePath, berr := looker.LookPath("bundle")
 

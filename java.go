@@ -12,7 +12,7 @@ import (
 	"github.com/abdfnx/looker"
 )
 
-func JavaTemplate(botName, platform, hostService string) {
+func JavaTemplate(botName, platform string) {
 	createDirs(botName, "java", platform)
 
 	gradle, err := looker.LookPath("gradle")

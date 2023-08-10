@@ -28,7 +28,7 @@ func MainTSContent(platform string) string {
 	return Content("main.ts", platform+"-nodejs-ts", "", "")
 }
 
-func NodejsTemplate(botName, pm, platform, hostService string, isTs bool) {
+func NodejsTemplate(botName, pm, platform string, isTs bool) {
 	_, nerr := looker.LookPath("npm")
 	pmPath, err := looker.LookPath(pm)
 

@@ -24,7 +24,7 @@ func ComposerFileContent(botName, platform string) string {
 	return Content("composer.json", platform+"-php", botName, "")
 }
 
-func PHPTemplate(botName, platform, hostService string) {
+func PHPTemplate(botName, platform string) {
 	_, err := looker.LookPath("php")
 	composerPath, serr := looker.LookPath("composer")
 

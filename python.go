@@ -24,7 +24,7 @@ func PyProjectContent(botName string) string {
 	return Content("pyproject.toml", "discord-python", botName, "")
 }
 
-func PythonTemplate(botName, platform, pm, hostService string) {
+func PythonTemplate(botName, platform, pm string) {
 	pip := "pip3"
 	pythonPath := "python3"
 

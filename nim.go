@@ -28,7 +28,7 @@ func NimbleFileContent(platform string) string {
 	return Content(platform+"_nim.nimble", platform+"-nim", "", "")
 }
 
-func NimTemplate(botName, platform, hostService string) {
+func NimTemplate(botName, platform string) {
 	_, err := looker.LookPath("nim")
 	nimblePath, nerr := looker.LookPath("nimble")
 

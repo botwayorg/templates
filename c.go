@@ -24,7 +24,7 @@ func CRunPsFileContent() string {
 	return Content("run.ps1", "discord-c", "", "")
 }
 
-func CTemplate(botName, hostService string) {
+func CTemplate(botName string) {
 	_, err := looker.LookPath("gcc")
 
 	if err != nil {

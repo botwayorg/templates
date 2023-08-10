@@ -20,7 +20,7 @@ func BotCSharpProj(platform string) string {
 	return Content(platform+"-csharp.csproj", platform+"-csharp", "", "")
 }
 
-func CsharpTemplate(botName, platform, hostService string) {
+func CsharpTemplate(botName, platform string) {
 	dotnetPath, err := looker.LookPath("dotnet")
 
 	if err != nil {

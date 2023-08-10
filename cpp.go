@@ -40,7 +40,7 @@ func RunPsFileContent(platform string) string {
 	return Content("run.ps1", "discord-cpp", "", "")
 }
 
-func CppTemplate(botName, platform, hostService string) {
+func CppTemplate(botName, platform string) {
 	_, err := looker.LookPath("gcc")
 	_, cerr := looker.LookPath("cmake")
 

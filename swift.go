@@ -24,7 +24,7 @@ func PackageSwiftFileContent(botName, platform string) string {
 	return Content("Package.swift", platform+"-swift", botName, "")
 }
 
-func SwiftTemplate(botName, platform, hostService string) {
+func SwiftTemplate(botName, platform string) {
 	swiftPath, err := looker.LookPath("swift")
 
 	if err := os.Mkdir(filepath.Join(botName, "Sources"), os.ModePerm); err != nil {

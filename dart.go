@@ -20,7 +20,7 @@ func PubspecFileContent(botName, platform string) string {
 	return Content("pubspec.yaml", platform+"-dart", botName, "")
 }
 
-func DartTemplate(botName, platform, hostService string) {
+func DartTemplate(botName, platform string) {
 	dartPath, err := looker.LookPath("dart")
 
 	if err != nil {
