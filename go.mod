@@ -6,12 +6,11 @@ require (
 	github.com/abdfnx/botway v0.2.0
 	github.com/abdfnx/looker v0.1.0
 	github.com/abdfnx/resto v0.1.6
-	github.com/tidwall/gjson v1.14.4
+	github.com/tidwall/gjson v1.17.0
 )
 
 require (
 	github.com/abdfnx/tran v0.1.43 // indirect
-	github.com/aymanbagabas/go-osc52 v1.2.2 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
 	github.com/charmbracelet/lipgloss v0.7.1 // indirect
 	github.com/gdamore/encoding v1.0.0 // indirect
